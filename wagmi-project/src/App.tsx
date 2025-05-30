@@ -10,6 +10,9 @@ import { config } from './wagmi'
 
 const queryClient = new QueryClient()
 
+// 自定义组件
+import { ContractInteraction } from './components/ContractInteraction'
+
 // 主要内容组件
 function MainContent() {
   const { address, isConnected } = useAccount()
@@ -29,11 +32,14 @@ function MainContent() {
       <main className="app-main">
         {isConnected ? (
           <div className="connected-content">
+             {/* 现有的账户信息 */}
             <div className="account-info">
               <h2>Account Info</h2>
               <p><strong>Address:</strong> {address}</p>
               <p><strong>Balance:</strong> {balance ? `${parseFloat(balance.formatted).toFixed(4)} ${balance.symbol}` : 'Loading...'}</p>
             </div>
+            {/* 添加合约交互组件 */}
+            <ContractInteraction></ContractInteraction>
             
             <div className="features">
               <h2>Available Features</h2>
