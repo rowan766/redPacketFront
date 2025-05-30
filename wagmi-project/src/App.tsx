@@ -12,6 +12,7 @@ const queryClient = new QueryClient()
 
 // 自定义组件
 import { ContractInteraction } from './components/ContractInteraction'
+import DynamicAccountsList from './components/DynamicAccountsList'
 
 // 主要内容组件
 function MainContent() {
@@ -40,6 +41,8 @@ function MainContent() {
             </div>
             {/* 添加合约交互组件 */}
             <ContractInteraction></ContractInteraction>
+            {/* 当前连接的链所有账户 */}
+            <DynamicAccountsList></DynamicAccountsList>
             
             <div className="features">
               <h2>Available Features</h2>
